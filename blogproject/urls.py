@@ -16,15 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import blogapp.views
+import portfolio.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',blogapp.views.home,name="home"),
-    path('blog/<int:blog_id',blogapp.views.detail,name="detail"),
+    path('blog/<int:blog_id>',blogapp.views.detail,name="detail"),
     path('blog/new/', blogapp.views.new, name='new'),
-    path('blog/create', blogapp.views.create, name="create"),
-    path('blog/favorit', blogapp.views.favorit, name="favorit"),
-    path('blog/music', blogapp.views.favorit, name="music"),
-    path('blog/food', blogapp.views.favorit, name="food"),
-    path('blog/urgent', blogapp.views.favorit, name="urgent"),
+    path('blog/create/', blogapp.views.create, name="create"),
+    path('blog/favorit/', blogapp.views.favorit, name="favorit"),
+    path('blog/music/', blogapp.views.music, name="music"),
+    path('blog/food/', blogapp.views.food, name="food"),
+    path('blog/urgent/', blogapp.views.urgent, name="urgent"),
+    path('portfolio/', portfolio.views.portfolio, name="portfolio"),
 ]

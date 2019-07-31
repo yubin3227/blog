@@ -6,7 +6,9 @@
 </head>
 <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-                <a class="navbar-brand" href="#">자살유발 코딩 World to 유빈</a>
+                <a class="navbar-brand" href="#">de oppresso liber___
+                  yubin
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button><br>
@@ -14,7 +16,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="C:\Users\yubin\Desktop\blog\blog\blogapp\templates\home.html">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'new' %}">글쓰기</a>
@@ -27,12 +29,8 @@
                         <a class="dropdown-item" href="{% url 'music'%}">music</a>
                         <a class="dropdown-item" href="{% url 'food'%}">food</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'urgent'%}">item</a>
+                        <a class="dropdown-item" href="{% url 'urgent'%}">urgent search</a>
                       </div>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="{% url 'urgent'%}" tabindex="-1" aria-disabled="true">urgent search</a>
-                    </li>
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -51,7 +49,7 @@
             <h3 class="card-title">{{blog.title}}</h3>
             <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
             <p class="card-text">{{blog.summary}}</p> 
-            <a>...more</a>
+            <a href="{%url 'detail' blog.id %}" class="card-link">...more</a>
          
   </div>
  </div> <br>
